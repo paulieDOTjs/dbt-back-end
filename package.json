@@ -4,6 +4,9 @@
   "main": "dist/server.js",
   "author": "Paul Hendrickson",
   "license": "MIT",
+  "engines": {
+    "node": ">=14.18.2"
+  },
   "scripts": {
     "start": "yarn build && node dist/server.js",
     "errors": "eslint . --fix-dry-run",
