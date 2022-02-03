@@ -1,15 +1,15 @@
 import { authors, books } from "../../models/booksDB";
 
-export const booksResolve: Omit<Resolvers, "_Service"> = {
+export const booksResolve = {
   Query: {
-    books: (_, args) => {
-      return books.filter((book) => {
+    books: (_: any, args: any) => {
+      return books.filter((book: any) => {
         return args.searchTitle ? book.title.includes(args.searchTitle) : books;
       });
     },
   },
   Book: {
-    author: (book) =>
-      authors.find((auth) => auth.authorId === book.authorId) || null,
+    author: (book: any) =>
+      authors.find((auth: any) => auth.authorId === book.authorId) || null,
   },
 };
